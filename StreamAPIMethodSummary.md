@@ -9,18 +9,18 @@
 	- It represents a function which accepts one parameter and returns either true or false based on some condition.
 
 ## Stream conversion
-	### Arrays
+### Arrays
 		- `Arrays.stream(arr)`
 		- `Stream.of(arr)`
-	### List
+### List
 		- `Collection.stream()` - example, `list.stream()`
-	### Map
+### Map
 		- There is no direct method to do this. Generally we create a stream of entrySet of the map by map.entrySet().stream()
-	### Specified values
+### Specified values
 		- `Stream.of(1,2,3,4,5,6)`
-	### Empty Stream
+### Empty Stream
 		- `Stream.empty()`
-	### Infinite stream
+### Infinite stream
 		- `Stream.iterate(seedValue, (Integer n) -> n*n).limit(limitValue)` - seedValue is the first element in the stream, and the function passed
 		  will be applied on to this seedValue for every subsequent element, limit operator applies the limit to the number of elements in the stream.
 		- `Stream.generate(Supplier fucntion).limit(limitValue)` - The supplier function is used to generate values of this stream and limit is used to limit the 
