@@ -1,45 +1,42 @@
 
 # Stream APIs
 
-## Consumer
-	- It represents a function which accepts one parameter and does not return anything.
-## Supplier
-	- It represents a function which does not accepts any parameter and returns a result.
-## Predicate
-	- It represents a function which accepts one parameter and returns either true or false based on some condition.
+## Consumer:
+- It represents a function which accepts one parameter and does not return anything.
+## Supplier:
+- It represents a function which does not accepts any parameter and returns a result.
+## Predicate:
+- It represents a function which accepts one parameter and returns either true or false based on some condition.
 
 ## Stream conversion
 ### Arrays
-		- `Arrays.stream(arr)`
-		- `Stream.of(arr)`
+- `Arrays.stream(arr)`
+- `Stream.of(arr)`
 ### List
-		- `Collection.stream()` - example, `list.stream()`
+- `Collection.stream()` - example, `list.stream()`
 ### Map
-		- There is no direct method to do this. Generally we create a stream of entrySet of the map by map.entrySet().stream()
+- There is no direct method to do this. Generally we create a stream of entrySet of the map by map.entrySet().stream()
 ### Specified values
-		- `Stream.of(1,2,3,4,5,6)`
+- `Stream.of(1,2,3,4,5,6)`
 ### Empty Stream
-		- `Stream.empty()`
+- `Stream.empty()`
 ### Infinite stream
-		- `Stream.iterate(seedValue, (Integer n) -> n*n).limit(limitValue)` - seedValue is the first element in the stream, and the function passed
-		  will be applied on to this seedValue for every subsequent element, limit operator applies the limit to the number of elements in the stream.
-		- `Stream.generate(Supplier fucntion).limit(limitValue)` - The supplier function is used to generate values of this stream and limit is used to limit the 
-		  number of elements in the stream, example, Stream.generate(Math::random).limit(5) will generate stream of random numbers upto 5 elements.
+- `Stream.iterate(seedValue, (Integer n) -> n*n).limit(limitValue)` - seedValue is the first element in the stream, and the function passed will be applied on to this seedValue for every subsequent element, limit operator applies the limit to the number of elements in the stream.
+- `Stream.generate(Supplier fucntion).limit(limitValue)` - The supplier function is used to generate values of this stream and limit is used to limit the number of elements in the stream, example, Stream.generate(Math::random).limit(5) will generate stream of random numbers upto 5 elements.
 
 ## Operations
-	- `filter(Predicate)`
-		- Filters the stream as per the passed Predicate and returns the new filtered stream.
-	- `map(Function)`
-		- Applies the passed function to the elements and returns the new stream.
-	- `mapToInt(Function)`
-		- It returns an IntStream consisting of the results of applying the given function to the elements of this stream.
-	- `mapToLong(Function)`
-		- It returns a LongStream consisting of the results of applying the given function to the elements of this stream.
-	- `mapToDouble(Function)`
-		- It returns a DoubleStream consisting of the results of applying the given function to the elements of this stream.
-	- `flatMap(Function)`
-		- It returns a stream consisting of the results of replacing each element of this stream with the contents of a mapped stream produced by applying the 
-		  provided mapping function to each element. Each mapped stream is closed after its contents have been placed into this stream. (If a mapped stream is null an empty stream is used, instead.)
+- `filter(Predicate)`
+- Filters the stream as per the passed Predicate and returns the new filtered stream.
+- `map(Function)`
+- Applies the passed function to the elements and returns the new stream.
+- `mapToInt(Function)`
+- It returns an IntStream consisting of the results of applying the given function to the elements of this stream.
+- `mapToLong(Function)`
+- It returns a LongStream consisting of the results of applying the given function to the elements of this stream.
+- `mapToDouble(Function)`
+- It returns a DoubleStream consisting of the results of applying the given function to the elements of this stream.
+- `flatMap(Function)`
+- It returns a stream consisting of the results of replacing each element of this stream with the contents of a mapped stream produced by applying the provided mapping function to each element. Each mapped stream is closed after its contents have been placed into this stream. (If a mapped stream is null an empty stream is used, instead.)
 	- `flatMapToInt(Function)`
 		- It returns an IntStream consisting of the results of replacing each element of this stream with the contents of a mapped stream produced by applying 
 		  the provided mapping function to each element. Each mapped stream is closed after its contents have been placed into this stream. (If a mapped stream is null an empty stream is used, instead.)
