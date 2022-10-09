@@ -99,7 +99,7 @@ It represents a function which accepts one parameter and returns either true or 
 : Transforms the input elements into a new List and returns a Collector.
 - `toSet()`
 : Transforms the input elements into a new Set and returns a Collector. This method will return Set instance and it doesn’t contain any duplicates.
-- `toMap(Function keyMapper, Function valueMapper, BinaryOpertaor[optional], Supplier[optional])
+- `toMap(Function keyMapper, Function valueMapper, BinaryOpertaor[optional], Supplier[optional])`
 : Transforms the elements into a Map whose keys and values are the results of applying the passed mapper functions to the input elements and returns a Collector. BinaryOpertor handles the duplicate keys, and Supplier enables the user to create a user expected Map implementation, example, `Collectors.toMap(obj -> obj.key, obj -> obj.value, (obj1, obj2) -> obj1.key, HashMap::new)`
 - `counting()`
 : It counts the number of input elements of type T and returns a Collector. This method is used in a case where we want to group and count the number of times each city is present in the collection of elements.
