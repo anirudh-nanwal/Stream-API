@@ -2,11 +2,11 @@
 # Stream APIs
 
 ## Consumer
-: It represents a function which accepts one parameter and does not return anything.
+It represents a function which accepts one parameter and does not return anything.
 ## Supplier
-: It represents a function which does not accepts any parameter and returns a result.
+It represents a function which does not accepts any parameter and returns a result.
 ## Predicate
-: It represents a function which accepts one parameter and returns either true or false based on some condition.
+It represents a function which accepts one parameter and returns either true or false based on some condition.
 
 ## Stream conversion
 ### Arrays
