@@ -2,11 +2,11 @@
 # Stream APIs
 
 ## Consumer:
-- It represents a function which accepts one parameter and does not return anything.
+: It represents a function which accepts one parameter and does not return anything.
 ## Supplier:
-- It represents a function which does not accepts any parameter and returns a result.
+: It represents a function which does not accepts any parameter and returns a result.
 ## Predicate:
-- It represents a function which accepts one parameter and returns either true or false based on some condition.
+: It represents a function which accepts one parameter and returns either true or false based on some condition.
 
 ## Stream conversion
 ### Arrays
@@ -26,52 +26,43 @@
 
 ## Operations
 - `filter(Predicate)`
-- Filters the stream as per the passed Predicate and returns the new filtered stream.
+: Filters the stream as per the passed Predicate and returns the new filtered stream.
 - `map(Function)`
-- Applies the passed function to the elements and returns the new stream.
+: Applies the passed function to the elements and returns the new stream.
 - `mapToInt(Function)`
-- It returns an IntStream consisting of the results of applying the given function to the elements of this stream.
+: It returns an IntStream consisting of the results of applying the given function to the elements of this stream.
 - `mapToLong(Function)`
-- It returns a LongStream consisting of the results of applying the given function to the elements of this stream.
+: It returns a LongStream consisting of the results of applying the given function to the elements of this stream.
 - `mapToDouble(Function)`
-- It returns a DoubleStream consisting of the results of applying the given function to the elements of this stream.
+: It returns a DoubleStream consisting of the results of applying the given function to the elements of this stream.
 - `flatMap(Function)`
-- It returns a stream consisting of the results of replacing each element of this stream with the contents of a mapped stream produced by applying the provided mapping function to each element. Each mapped stream is closed after its contents have been placed into this stream. (If a mapped stream is null an empty stream is used, instead.)
-	- `flatMapToInt(Function)`
-		- It returns an IntStream consisting of the results of replacing each element of this stream with the contents of a mapped stream produced by applying 
-		  the provided mapping function to each element. Each mapped stream is closed after its contents have been placed into this stream. (If a mapped stream is null an empty stream is used, instead.)
-	- `flatMapToLong(Function)`
-		- It returns a LongStream consisting of the results of replacing each element of this stream with the contents of a mapped stream produced by applying 
-		  the provided mapping function to each element. Each mapped stream is closed after its contents have been placed into this stream. (If a mapped stream is null an empty stream is used, instead.)
-	- `flatMapToDouble(Function)`
-		- It returns a DoubleStream consisting of the results of replacing each element of this stream with the contents of a mapped stream produced by 
-		  applying the provided mapping function to each element. Each mapped stream is closed after its contents have placed been into this stream. (If a mapped stream is null an empty stream is used, instead.)
-	- `forEach(Consumer)`
-		- It performs an action for each element of this stream.
-	- `forEachOrdered(Consumer)`
-		- It performs an action for each element of this stream, in the encounter order of the stream if the stream has a defined encounter order.
-	- `sum()`
-		- It returns the sum of elements in this stream. This is a special case of a reduction. IntStream sum() is a terminal operation i.e, it may traverse 
-		  the stream to produce a result or a side-effect. 
-	- `reduce(BinaryOperator)`
-		- It performs a reduction on the elements of this stream, using an associative accumulation function, and returns an Optional describing the reduced 
-		  value, if any.
-	- `reduce(T identity, BinaryOperator)`
-		- It performs a reduction on the elements of this stream, using the provided identity value and an associative accumulation function, and returns the 
-		  reduced value.
-	- `reduce(T identity, BiFunctino accumulator, BinaryOperator)`
-		- It performs a reduction on the elements of this stream, using the provided identity, accumulation and combining functions.
-	- `skip(long n)`
-		- It returns a stream consisting of the remaining elements of this stream after discarding the first n elements of the stream. If this stream contains 
-		  fewer than n elements then an empty stream will be returned.
-	- `sorted()`
-		- It returns a stream consisting of the elements of this stream, sorted according to natural order. If the elements of this stream are not Comparable, 
-		  a java.lang.ClassCastException may be thrown when the terminal operation is executed.
-	- `sorted(Comparator)
-		- It returns a stream consisting of the elements of this stream, sorted according to the provided Comparator.
-	- `collect(Collector)`
-		- It performs a mutable reduction operation on the elements of this stream using a Collector. A Collector encapsulates the functions used as arguments 
-		  to collect(Supplier, BiConsumer, BiConsumer), allowing for reuse of collection strategies and composition of collect operations such as multiple-level grouping or partitioning.
+: It returns a stream consisting of the results of replacing each element of this stream with the contents of a mapped stream produced by applying the provided mapping function to each element. Each mapped stream is closed after its contents have been placed into this stream. (If a mapped stream is null an empty stream is used, instead.)
+- `flatMapToInt(Function)`
+: It returns an IntStream consisting of the results of replacing each element of this stream with the contents of a mapped stream produced by applying the provided mapping function to each element. Each mapped stream is closed after its contents have been placed into this stream. (If a mapped stream is null an empty stream is used, instead.)
+- `flatMapToLong(Function)`
+: It returns a LongStream consisting of the results of replacing each element of this stream with the contents of a mapped stream produced by applying the provided mapping function to each element. Each mapped stream is closed after its contents have been placed into this stream. (If a mapped stream is null an empty stream is used, instead.)
+- `flatMapToDouble(Function)`
+: It returns a DoubleStream consisting of the results of replacing each element of this stream with the contents of a mapped stream produced by applying the provided mapping function to each element. Each mapped stream is closed after its contents have placed been into this stream. (If a mapped stream is null an empty stream is used, instead.)
+- `forEach(Consumer)`
+: It performs an action for each element of this stream.
+- `forEachOrdered(Consumer)`
+: It performs an action for each element of this stream, in the encounter order of the stream if the stream has a defined encounter order.
+- `sum()`
+: It returns the sum of elements in this stream. This is a special case of a reduction. IntStream sum() is a terminal operation i.e, it may traverse the stream to produce a result or a side-effect. 
+- `reduce(BinaryOperator)`
+: It performs a reduction on the elements of this stream, using an associative accumulation function, and returns an Optional describing the reduced value, if any.
+- `reduce(T identity, BinaryOperator)`
+: It performs a reduction on the elements of this stream, using the provided identity value and an associative accumulation function, and returns the reduced value.
+- `reduce(T identity, BiFunctino accumulator, BinaryOperator)`
+: It performs a reduction on the elements of this stream, using the provided identity, accumulation and combining functions.
+- `skip(long n)`
+: It returns a stream consisting of the remaining elements of this stream after discarding the first n elements of the stream. If this stream contains fewer than n elements then an empty stream will be returned.
+- `sorted()`
+: It returns a stream consisting of the elements of this stream, sorted according to natural order. If the elements of this stream are not Comparable, a java.lang.ClassCastException may be thrown when the terminal operation is executed.
+- `sorted(Comparator)
+: It returns a stream consisting of the elements of this stream, sorted according to the provided Comparator.
+- `collect(Collector)`
+: It performs a mutable reduction operation on the elements of this stream using a Collector. A Collector encapsulates the functions used as arguments to collect(Supplier, BiConsumer, BiConsumer), allowing for reuse of collection strategies and composition of collect operations such as multiple-level grouping or partitioning.
 	- `collect(Supplier, BiConsumer<R,? super T> accumulator, BiConsumer<R,R> combiner)`
 		- It performs a mutable reduction operation on the elements of this stream. A mutable reduction is one in which the reduced value is a mutable result 
 		  container, such as an ArrayList, and elements are incorporated by updating the state of the result rather than by replacing the result.
